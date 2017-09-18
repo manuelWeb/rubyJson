@@ -1,0 +1,48 @@
+/ ### !important 
+/ > si modif var.slim alors sauver indexC.slim pour mise à jour des variables. 
+- $date = "0917"
+- ID = "530"
+- url = "https://www.ideeshomme.fr/fr/"
+/ ### price
+- $price_pk1 = "49.90"
+- $price_pk2 = "29.90"
+- $price_pk3 = "39.90"
+/ ###tite <span class=\"small\"></span>
+/ - $title_pk_1 = ["Tire bouchon","à manivelle"]
+- $title_pk_1 = ["Starplug<sup>®</sup>","<span class=\"small\">Le rehausseur de prise</span>"]
+- $title_pk_2 = ["Coupe saucisson",""]
+- $title_pk_3 = ["Baladeur CD","portable"]
+/ urlPck
+-urlPk1 = { ###,
+  path: "maison/bureau/",
+  lib: "starplug",
+  ref: "1600154"}
+-urlPk2 = { ###,
+	path: "maison/cuisine/",
+	lib: "coupe-saucisson",
+	ref: "1619154"}
+-urlPk3 = { ###,
+	path: "high-tech/image-son/",
+	lib: "baladeur-cd-portable",
+	ref: "1652155"}
+
+/ ############ not change it's Automatique ^_^ ####################
+/ ###analytics
+- $gaq_pck1      = "'EncartHP_RayonEvt', 'pk1_#{urlPk1[:lib]}_#{urlPk1[:ref]}', "
+- $gaq_pck2      = "'EncartHP_RayonEvt', 'pk2_#{urlPk2[:lib]}_#{urlPk2[:ref]}', "
+- $gaq_pck3      = "'EncartHP_RayonEvt', 'pk3_#{urlPk3[:lib]}_#{urlPk3[:ref]}', "
+/ txt
+-$txtBtn = ["voir les nouveautés",""]
+
+/ ###LINK do not change 
+- $linkPck1      = "#{url}#{urlPk1[:path]}#{urlPk1[:lib]}/#{urlPk1[:ref]}.html"
+- $linkPck2      = "#{url}#{urlPk2[:path]}#{urlPk2[:lib]}/#{urlPk2[:ref]}.html"
+- $linkPck3      = "#{url}#{urlPk3[:path]}#{urlPk3[:lib]}/#{urlPk3[:ref]}.html"
+
+/ do not change
+- $gaq_start     = "ga('local.send', 'event', "
+- $gaq_end       = "document.location.pathname);"
+
+- $gaq_Ecata     = "'EncartHP_Ecata', 'EncartHP_Ecata-"+$date+"', "
+- $gaq_rayon_evt = "'EncartHP_RayonEvt"+ID+"', 'decouvrezSelection', "
+- $linkRayEvt    = "#{url}boutique/rayon_evenement.aspx?pg=0&nbp=99&evenement_id=#{ID}"
