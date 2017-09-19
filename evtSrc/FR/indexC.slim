@@ -1,3 +1,6 @@
+-require 'json'
+-file = File.read('source.json')
+-objso = JSON.parse(file)
 == Slim::Template.new('./evtSrc/FR/var.slim').render
 doctype strict
 html
@@ -9,6 +12,7 @@ html
     / link href="./evtSrc/FR/index.scss"
 
   body
+    p == objso['lib']['pk1'] + objso['ref']['pk1']
     #hpAnimCo
       .centralEvent
         a.cataLink href="https://www.ideeshomme.fr/cat/fr/ECatalog.htm" target="_blank" onclick==$gaq_start+$gaq_Ecata+$gaq_end
@@ -24,7 +28,7 @@ html
           li.pck1
             a href=$linkPck1 onclick==$gaq_start+$gaq_pck1+$gaq_end
               span.price_pk-1
-                =="#{$price_pk1} €"
+                =="#{objso['price']['pk1']} €"
               span.title_pk-1
                 == $title_pk_1[0]
                 -if $title_pk_1[1] != ''
