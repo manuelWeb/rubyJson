@@ -1,10 +1,13 @@
-/ ### !important 
-/ > si modif var.slim alors sauver indexC.slim pour mise à jour des variables. 
+/ ### !important créer les variable depuis source.json
+-require 'json'
+-file = File.read('source.json')
+-$objso = JSON.parse(file)
+
 - $date = "0917"
 - ID = "530"
 - url = "https://www.ideeshomme.fr/fr/"
 / ### price
-- $price_pk1 = "49.90"
+- $price_pk1 = "#{$objso['price']['pk1']} €"
 - $price_pk2 = "29.90"
 - $price_pk3 = "39.90"
 / ###tite <span class=\"small\"></span>
